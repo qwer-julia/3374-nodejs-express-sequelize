@@ -1,9 +1,12 @@
+const database = require('../models');
+
 class PessoaController {
-  static async getAll(req, res){
+  static async getAll(req, res, next){
     try {
-      //acessar modelo
+      const listaDePessoas = await database.Pessoa.findAll();
+      return res.status(200).json(listaDePessoas);
     }    catch (erro) {
-      //erro
+      next(erro);
     }
   }
 }
