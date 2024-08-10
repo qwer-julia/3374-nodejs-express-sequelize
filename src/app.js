@@ -1,4 +1,5 @@
 const express = require('express');
+// não estou utilizando import export foi algumas ferramentas do Sequelize funcionam melhor com o CommonJs
 
 const app = express();
 
